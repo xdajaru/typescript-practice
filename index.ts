@@ -1,9 +1,31 @@
 class Vehicle {
-    drive(): void {
-        console.log('Mobil berkendara')
-    } 
+    
+    constructor(public color: string = 'foo') { }
+    protected honk(): void {
+        console.log('tin tinnn')
+    }
 }
 
-const driver = new Vehicle();
+class Car extends Vehicle {
 
-driver.drive();
+    constructor(public year: number, color: string = 'red') {
+        super();
+    }
+
+    private drive(): void {
+        console.log('Ngeeng')
+    }
+
+    public drivingProcess(): void {
+        this.drive();
+        this.honk();
+        console.log(this.year);
+        console.log(this.color);
+    }
+
+
+}
+
+const car = new Car(1946);
+
+car.drivingProcess();
