@@ -1,3 +1,4 @@
+/// <reference types="@types/google.maps" />
 class Vehicle {
     
     constructor(public color: string = 'foo') { }
